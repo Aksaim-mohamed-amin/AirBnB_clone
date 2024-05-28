@@ -1,7 +1,0 @@
-""" Base Model """
-
-import uuid
-from datetime import datetime
-
-
-cla

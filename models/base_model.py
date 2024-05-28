@@ -1,37 +1,52 @@
 #!/usr/bin/python3
-""" Base Model """
+"""BaseModel Module.
+
+This module defines the BaseModel class that serves as a base class for other
+models in the AirBnb Clone project.
+It include common attributes and methods for other classes.
+"""
+
 
 import uuid
 from datetime import datetime
 
 
 class BaseModel:
-    """ Base model class """
+    """ BaseModel class.
+    
+    This class defines all common attributes/methods for other classess.
+    """
+
     def __init__(self):
-        """
-        base model constructor.
+        """Initialize a new BaseModel instance.
+
+        assigns a unique ID and time stamp to the instance created.
         """
         self.id = str(uuid.uuid4())
         self.created_at = datetime.now()
         self.updated_at = datetime.now()
 
     def __str__(self):
-        """
-        return a repersentation of the instance.
+        """Return a string representation of the instance.
+
+        Returns:
+        A string in the format [<class name>] (<self.id>) <self.__dict__>
         """
         return f"[{self.__class__.__name__}] ({self.id}) {self.__dict__}"
 
     def save(self):
         """
-        Update the public instance attribute updated_at with the
-        current datetime.
+        Update the public instance attribute updated_at 
+        with the current datetime.
         """
         self.updated_at = datetime.now()
 
     def to_dict(self):
-        """
-        returns a dictionary containing all keys/values of __dict__
-        of the instance.
+        """Return a dictionary containing all keys/values of __dict__ of the instance.
+
+        Returns:
+            dict: A dictionary representation of the instance with class name and
+            ISO format dates for created_at and updated_at.
         """
         dictionary = self.__dict__.copy()
         dictionary['__class__'] = self.__class__.__name__
