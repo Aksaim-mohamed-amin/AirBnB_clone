@@ -14,6 +14,40 @@ class TestBaseModel(unittest.TestCase):
         self.i1 = BaseModel()
         self.i2 = BaseModel()
 
+    def test_init_with_kwargs(self):
+        """Test initialisation of an instance from a dictionary"""
+        self.i1.name = "Test Model"
+        self.i1.my_number = 7
+        i1_dict = self.i1.to_dict()
+
+        new_model = BaseModel(**i1_dict)
+
+        self.assertEqual(new_model.id, self.i1.id)
+        self.assertEqual(new_model.created_at, self.i1.created_at)
+        self.assertEqual(new_model.updated_at, self.i1.updated_at)
+
+        self.assertIn('name', new_model.to_dict())
+        self.assertIn('my_number', new_model.to_dict())
+
+        self.assertEqual(new_model.name, 'Test Model')
+        self.assertEqual(new_model.my_number, 7)
+
+        self.assertNotEqual(self.i1, new_model)
+
+    def test_init_with_kwargs_missing_fields(self):
+        """Test initialization when kwargs are missing some fields"""
+        partial_dict = {key: value for key, value in self.i2.to_dict().items()
+                        if key not in ['name', 'my_number']}
+
+        new_model = BaseModel(**partial_dict)
+
+        self.assertEqual(new_model.id, self.i2.id)
+        self.assertEqual(new_model.created_at, self.i2.created_at)
+        self.assertEqual(new_model.updated_at, self.i2.updated_at)
+
+        self.assertNotIn('name', new_model.to_dict())
+        self.assertNotIn('my_number', new_model.to_dict())
+
     def test_id_is_unique(self):
         """Test that each instance of BaseModel has a unique id"""
         self.assertNotEqual(self.i1.id, self.i2.id)

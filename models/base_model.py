@@ -11,15 +11,17 @@ from datetime import datetime
 class BaseModel:
     def __init__(self, *args, **kwargs):
         """Initialize the BaseModel."""
-        if not kwargs:
+        if kwargs:
+            for key, value in kwargs.items():
+                if key == '__class__':
+                    continue
+                if key in ['created_at', 'updated_at']:
+                    value = datetime.fromisoformat(value)
+                setattr(self, key, value)
+        else:
             self.id = str(uuid.uuid4())
             self.created_at = datetime.now()
             self.updated_at = datetime.now()
-        else:
-            self.__dict__ = kwargs
-            self.created_at = datetime.fromisoformat(self.created_at)
-            self.updated_at = datetime.fromisoformat(self.updated_at)
-
 
     def __str__(self):
         """Return a string representation of the instance"""
