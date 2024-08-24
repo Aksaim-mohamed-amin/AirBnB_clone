@@ -29,8 +29,9 @@ class FileStorage:
         """Loads storage dictionary from file"""
         from models.base_model import BaseModel
 
-        classes = {'BaseModel': BaseModel}
-
+        classes = {
+                    'BaseModel': BaseModel
+                  }
         try:
             temp = {}
             with open(FileStorage.__file_path, 'r') as f:
