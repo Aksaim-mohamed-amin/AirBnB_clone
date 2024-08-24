@@ -59,7 +59,7 @@ class TestFileStorage(unittest.TestCase):
         new_storage = FileStorage()
         new_storage.reload()
         key = f"{self.model.__class__.__name__}.{self.model.id}"
-        self.asserIn(key, new_storage.all())
+        self.assertIn(key, new_storage.all())
 
     def test_reload_no_file(self):
         """Test That reload does nothing if no file exists"""
