@@ -27,6 +27,10 @@ class TestFileStorage(unittest.TestCase):
         """Test that __file_path is a string"""
         self.assertIsInstance(FileStorage._FileStorage__file_path, str)
 
+    def test_objects_type(self):
+        """Test that __objects is a dictionarry"""
+        self.assertIsInstance(FileStorage._FileStorage__objects, dict)
+
     def test_all_returns_dict(self):
         """Test that the all method returns the __objects dictionary"""
         self.assertIsInstance(self.storage.all(), dict)
@@ -69,3 +73,10 @@ class TestFileStorage(unittest.TestCase):
         """Test That reload does nothing if no file exists"""
         new_storage = FileStorage()
         self.assertIsNone(new_storage.reload())
+
+    def test_reload_from_empty_file(self):
+        """Test reloading from an empty file"""
+        with open('file.json', 'w') as json_file:
+            pass
+        with self.assertRaises(json.JSONDecodeError):
+            self.storage.reload()
