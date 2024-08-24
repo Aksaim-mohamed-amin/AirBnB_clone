@@ -50,3 +50,17 @@ class TestFileStorage(unittest.TestCase):
         key = f"{self.model.__class__.__name__}.{self.model.id}"
         self.assertIn(key, objects)
         self.assertEqual(objects[key], self.model.to_dict())
+
+    def test_reload_loads_objects(self):
+        """Test that reload method load objects from the file"""
+        self.storage.new(self.model)
+        self.storage.save()
+
+        new_storage = FileStorage()
+        new_storage.reload()
+        self.assertEqual(new_storage.all(), self.storage.all())
+
+    def test_reload_no_file(self):
+        """Test That reload does nothing if no file exists"""
+        new_storage = FileStorage()
+        self.assertIsNone(new_storage.reload())
