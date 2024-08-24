@@ -8,6 +8,12 @@ class HBNBCommand(cmd.Cmd):
     """Define the functionality of the HBNB console"""
     prompt = '(hbnb) '
 
+    def emptyline(self):
+        """
+        Override emptyline method to do nothing when an empty line is entered.
+        """
+        pass
+
     def do_quit(self, args):
         """Quit the programe"""
         return True
