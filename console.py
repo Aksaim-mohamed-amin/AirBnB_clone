@@ -113,12 +113,11 @@ class HBNBCommand(cmd.Cmd):
         print('Usage: destroy <class name> <instance id>')
         print('Deletes an instance based on the class name and id\n')
 
-    def do_all(self, args):
+    def do_all(self, class_name):
         """Prints all string representation of all instances"""
         models = []
 
-        if args:
-            class_name = args.strip()
+        if class_name:
             if class_name not in self.cls:
                 print('** class doesn\'t exist **')
                 return
