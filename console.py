@@ -16,7 +16,9 @@ class HBNBCommand(cmd.Cmd):
     """Define the functionality of the HBNB console"""
     prompt = '(hbnb) '
 
-    cls = {'BaseModel': BaseModel, 'User': User}
+    cls = {'BaseModel': BaseModel, 'User': User, 'State': State,
+           'City': City, 'Amenity': Amenity, 'Place': Place,
+           'Review': Review}
 
     def emptyline(self):
         """
