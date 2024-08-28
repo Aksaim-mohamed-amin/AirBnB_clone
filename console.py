@@ -181,6 +181,14 @@ class HBNBCommand(cmd.Cmd):
         new_dict.__dict__.update({attr: value})
         new_dict.save()
 
+    def help_update(self):
+        """Print the hep documentation for the update method"""
+        print('Usage: update <class name> <id> <attribute> <value>')
+        print('Updates an instance based on the class name and id by adding or',
+              'updating attribute')
+        print('No spaces are allowed in the value of the attribute,',
+              'if you need space the value must be between \'"\'')
+
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
