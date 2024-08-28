@@ -34,6 +34,8 @@ class HBNBCommand(cmd.Cmd):
             class_name = line.split('.')[0]
             command = line.split('.')[1].split('(')[0]
             args = line.split('(')[1].split(')')[0]
+            if ',' in args:
+                args = ' '.join(args.split(','))
             return f"{command} {class_name} {args}"
 
     def do_quit(self, args):

@@ -26,6 +26,16 @@ class HBNBCommand(cmd.Cmd):
         """
         pass
 
+    def precmd(self, line):
+        """Handel advanced command syntax"""
+        if not ('.' and '(' and ')') in line:
+            return line
+        else:
+            class_name = line.split('.')[0]
+            command = line.split('.')[1].split('(')[0]
+            args = line.split('(')[1].split(')')[0]
+            return f"{command} {class_name} {args}"
+
     def do_quit(self, args):
         """Quit the programe"""
         return True
@@ -61,6 +71,27 @@ class HBNBCommand(cmd.Cmd):
         print('Usage: create <model>')
         print('Creates a new instance of any model, saves it to JSON file and')
         print('prints the id of the new model\n')
+
+    def do_count(self, class_name):
+        """Retrieve the number of instances of a class"""
+        if not class_name:
+            print('** class name missing **')
+            return
+
+        if class_name not in self.cls:
+            print('** class doesn\'t exist **')
+            return
+
+        count = 0
+        for obj in storage.all().values():
+            if obj.to_dict()['__class__'] == class_name:
+                count += 1
+        print(count)
+
+    def help_count(self):
+        """Print the help ducomentation for the count method"""
+        print('Usage: count <class name>')
+        print('count the number of instances of a class')
 
     def do_show(self, args):
         """Prints the string representation of an instance"""

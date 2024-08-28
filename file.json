@@ -52,5 +52,12 @@
         "created_at": "2024-08-28T10:09:34.615652",
         "updated_at": "2024-08-28T10:09:34.615657",
         "__class__": "BaseModel"
+    },
+    "User.0aeaf5df-21e4-4642-b35e-ffc2e09632d8": {
+        "id": "0aeaf5df-21e4-4642-b35e-ffc2e09632d8",
+        "created_at": "2024-08-28T11:38:51.934538",
+        "updated_at": "2024-08-28T11:41:22.048984",
+        "name": "mohamed amine",
+        "__class__": "User"
     }
 }
