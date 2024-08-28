@@ -26,15 +26,6 @@ class HBNBCommand(cmd.Cmd):
         """
         pass
 
-    def precmd(self, line):
-        """"""
-        if not ('.' and '(' and ')') in line:
-            return line
-        else:
-            class_name = line.split('.')[0]
-            command = line.split('.')[1].split('(')[0]
-            return f"{command} {class_name}"
-
     def do_quit(self, args):
         """Quit the programe"""
         return True
