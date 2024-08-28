@@ -1,26 +1,9 @@
 {
-    "BaseModel.3455fd62-da37-42e6-a3a2-14a20945291d": {
-        "id": "3455fd62-da37-42e6-a3a2-14a20945291d",
-        "created_at": "2024-08-25T04:47:54.485552",
-        "updated_at": "2024-08-25T04:47:54.485558",
-        "__class__": "BaseModel"
-    },
-    "BaseModel.bdfab8f7-e0be-465b-b473-125a1439279a": {
-        "id": "bdfab8f7-e0be-465b-b473-125a1439279a",
-        "created_at": "2024-08-25T05:14:14.365082",
-        "updated_at": "2024-08-25T05:14:14.365088",
-        "__class__": "BaseModel"
-    },
-    "BaseModel.b1723d28-f5aa-42e0-9a3b-0f86ddfb1bff": {
-        "id": "b1723d28-f5aa-42e0-9a3b-0f86ddfb1bff",
-        "created_at": "2024-08-25T05:18:30.447674",
-        "updated_at": "2024-08-25T05:18:30.447679",
-        "__class__": "BaseModel"
-    },
-    "BaseModel.587524e6-1c3c-4d23-888d-bcbf4e318767": {
-        "id": "587524e6-1c3c-4d23-888d-bcbf4e318767",
-        "created_at": "2024-08-25T09:15:35.702654",
-        "updated_at": "2024-08-25T09:15:35.702659",
+    "BaseModel.20bac2e9-9880-47fe-adb7-dc3fa8e658dc": {
+        "id": "20bac2e9-9880-47fe-adb7-dc3fa8e658dc",
+        "created_at": "2024-08-28T05:58:34.609890",
+        "updated_at": "2024-08-28T05:59:29.316996",
+        "name": "mohamed amine",
         "__class__": "BaseModel"
     }
 }

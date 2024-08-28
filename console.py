@@ -100,7 +100,6 @@ class HBNBCommand(cmd.Cmd):
 
         id = args.split()[1]
         key = f"{class_name}.{id}"
-
         if key not in storage.all().keys():
             print('** no instance found **')
             return
@@ -130,6 +129,57 @@ class HBNBCommand(cmd.Cmd):
                 models.append(str(model))
 
         print(models)
+
+    def help_all(self):
+        """Print the help documentation for the method all"""
+        print('Usage: all <class name (optional)>')
+        print('Will print all the instances of a class')
+        print('if the class name is not specified it will print all models\n')
+
+    def do_update(self, args):
+        """Update an instance based on class name and id"""
+        if not args:
+            print('** class name missing **')
+            return
+        else:
+            args = args.split()
+            class_name = args[0]
+
+        if class_name not in self.cls:
+            print('** class doesn\'t exist **')
+            return
+
+        if len(args) < 2:
+            print('** instance id missing **')
+            return
+        else:
+            id = args[1]
+
+        key = f"{class_name}.{id}"
+        if key not in storage.all().keys():
+            print('** no instance found **')
+            return
+
+        if len(args) < 3:
+            print('** attribute name missing **')
+            return
+        else:
+            attr = args[2]
+
+        if len(args) < 4:
+            print('** value missing **')
+            return
+        else:
+            if '"' in ''.join(args[3:]):
+                value = ' '.join(args[3:]).split('"')[1]
+            else:
+                value = args[3]
+
+        key = f"{class_name}.{id}"
+        new_dict = storage.all()[key]
+
+        new_dict.__dict__.update({attr: value})
+        new_dict.save()
 
 
 if __name__ == '__main__':
