@@ -34,5 +34,23 @@
         "created_at": "2024-08-28T07:26:55.502871",
         "updated_at": "2024-08-28T07:26:55.502878",
         "__class__": "Amenity"
+    },
+    "BaseModel.dde9279d-7dfe-4dd4-ac7a-cd18757eb999": {
+        "id": "dde9279d-7dfe-4dd4-ac7a-cd18757eb999",
+        "created_at": "2024-08-28T10:09:33.168816",
+        "updated_at": "2024-08-28T10:09:33.168879",
+        "__class__": "BaseModel"
+    },
+    "BaseModel.50cf69c5-c462-4ad2-8d04-c208be2ec212": {
+        "id": "50cf69c5-c462-4ad2-8d04-c208be2ec212",
+        "created_at": "2024-08-28T10:09:33.976211",
+        "updated_at": "2024-08-28T10:09:33.976217",
+        "__class__": "BaseModel"
+    },
+    "BaseModel.f6f6f800-aaf8-4de6-90e7-a91b01dd968f": {
+        "id": "f6f6f800-aaf8-4de6-90e7-a91b01dd968f",
+        "created_at": "2024-08-28T10:09:34.615652",
+        "updated_at": "2024-08-28T10:09:34.615657",
+        "__class__": "BaseModel"
     }
 }
