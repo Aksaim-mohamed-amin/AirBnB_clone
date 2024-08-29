@@ -1,10 +1,12 @@
 {
-    "User.e92fb028-a89b-4023-bcc6-2803bbdc6f48": {
-        "id": "e92fb028-a89b-4023-bcc6-2803bbdc6f48",
-        "created_at": "2024-08-28T12:00:03.040817",
-        "updated_at": "2024-08-28T12:03:13.145418",
+    "User.01e38d11-28e2-49f8-84db-83c69ba56b09": {
+        "id": "01e38d11-28e2-49f8-84db-83c69ba56b09",
+        "created_at": "2024-08-29T06:42:47.154496",
+        "updated_at": "2024-08-29T06:44:00.345693",
         "name": "amine",
-        "lastname:": "aksaim",
+        "age": 29,
+        "last_name": "aksaim",
+        "lat": 2.5,
         "__class__": "User"
     }
 }

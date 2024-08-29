@@ -38,8 +38,8 @@ class HBNBCommand(cmd.Cmd):
                 args = ' '.join(args.split(','))
             elif ('{' and '}' and ',') in args:
                 dic = args.split('{')[1].split('}')[0]
-                args = ' '.join(args.split('{')[0].split(','))
-                args = ' '.join([args, dic])
+                id = args.split(',')[0].strip('"')
+                args = id + ' ' + args[args.find('{') : args.find('}') + 1]
             return f"{command} {class_name} {args}"
 
 
@@ -208,6 +208,24 @@ class HBNBCommand(cmd.Cmd):
 
         if len(args) < 3:
             print('** attribute name missing **')
+            return
+        elif ('{' and '}') in ' '.join(args[2:]):
+            # Update from a dictionary
+            attr_dict = ' '.join(args[2:])
+            attr_dict = attr_dict.split('{')[1].split('}')[0]
+            key_val = attr_dict.split(',')
+            for pair in key_val:
+                attr = pair.split(':')[0].strip('"\' ')
+                value = pair.split(':')[1].strip('"\' ')
+                try:
+                    value = int(value)
+                except ValueError:
+                    try:
+                        value = float(value)
+                    except ValueError:
+                        value = str(value)
+                storage.all()[key].__dict__.update({attr: value})
+            storage.all()[key].save()
             return
         else:
             attr = args[2]
