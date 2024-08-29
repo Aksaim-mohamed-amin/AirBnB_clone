@@ -39,9 +39,8 @@ class HBNBCommand(cmd.Cmd):
             elif ('{' and '}' and ',') in args:
                 dic = args.split('{')[1].split('}')[0]
                 id = args.split(',')[0].strip('"')
-                args = id + ' ' + args[args.find('{') : args.find('}') + 1]
+                args = id + ' ' + args[args.find('{'):args.find('}') + 1]
             return f"{command} {class_name} {args}"
-
 
     def do_quit(self, args):
         """Quit the programe"""
@@ -248,8 +247,8 @@ class HBNBCommand(cmd.Cmd):
     def help_update(self):
         """Print the hep documentation for the update method"""
         print('Usage: update <class name> <id> <attribute> <value>')
-        print('Updates an instance based on the class name and id by adding or',
-              'updating attribute')
+        print('Updates an instance based on the class name and id by adding',
+              'or, updating attribute')
         print('No spaces are allowed in the value of the attribute,',
               'if you need space the value must be between \'"\'')
 
