@@ -1,0 +1,33 @@
+section.places {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+section.places h1 {
+    width: 100%;
+    font-size: 30px;
+    margin-bottom: 0px;
+    margin-left: 20px;
+}
+
+section.places article {
+    width: 390px;
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #FF5A5F;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+}
+
+section.places article h2{
+    font-size: 30px;
+    margin: 0;
+    padding: 0;
+}
