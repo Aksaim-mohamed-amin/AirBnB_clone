@@ -73,21 +73,21 @@ section.places article > div > div {
     align-items: center;
 }
 
-section.places div.max_guest #max_guest_icon {
+#max_guest_icon {
     width: 25px;
     height: 25px;
     background: url("../images/icon_group.png") no-repeat center;
     background-size: cover;
 }
 
-section.places div.number_rooms #number_rooms_icon {
+#number_rooms_icon {
     width: 25px;
     height: 25px;
     background: url("../images/icon_bed.png") no-repeat center;
     background-size: cover;
 }
 
-section.places div.number_bathrooms #number_bathrooms_icon {
+#number_bathrooms_icon {
     width: 25px;
     height: 25px;
     background: url("../images/icon_bath.png") no-repeat center;
@@ -110,4 +110,78 @@ section.places article .description {
     width: 100%;
     text-align: left;
     margin: 5px auto;
+}
+
+section.places article .amenities {
+    margin-top: 40px;
+    width: 100%;
+}
+
+section.places article .amenities h2 {
+    font-size: 16px;
+    border-bottom: 1px solid #DDDDDD;
+    text-align: left;
+    margin: 10px auto;
+}
+
+section.places article .amenities ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+section.places article .amenities ul li {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+}
+
+#TV_icon {
+    background: url("../images/icon_tv.png") no-repeat center;
+    background-size: cover;
+    width: 25px;
+    height: 25px;
+}
+
+#WiFi_icon {
+    background: url("../images/icon_wifi.png") no-repeat center;
+    background-size: cover;
+    width: 25px;
+    height: 25px;
+}
+
+#Pets_icon {
+    background: url("../images/icon_pets.png") no-repeat center;
+    background-size: cover;
+    width: 25px;
+    height: 25px;
+}
+
+section.places .reviews {
+    margin-top: 40px;
+    width: 100%;
+}
+
+section.places .reviews h2 {
+    font-size: 16px;
+    border-bottom: 1px solid #DDDDDD;
+    text-align: left;
+    margin: 20px auto;
+}
+
+section.places article .reviews ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+section.places .reviews h3 {
+    font-size: 14px;
+    margin-bottom: 0px;
+}
+
+section.places .reviews p {
+    font-size: 12px;
+    margin: 0;
 }
